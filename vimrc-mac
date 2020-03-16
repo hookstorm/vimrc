@@ -1,3 +1,12 @@
+
+"     _   _             _  __
+"    | | | | ___   ___ | |/ /
+"    | |_| |/ _ \ / _ \| ' / 
+"    |  _  | (_) | (_) | . \ 
+"    |_| |_|\___/ \___/|_|\_\
+                            
+
+
 set encoding=utf-8
 set cursorline
 set wrap
@@ -16,7 +25,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set showmatch
-set scrolloff=4
+set scrolloff=5
 set foldmethod=indent
 set autochdir
 au BufReadPost * if line("'\"")>1 && line("'\"") <= line("$") | exe "normal !g\"" | endif
@@ -36,8 +45,28 @@ Plug 'connorholyday/vim-snazzy'
 "Plug 'ycm-core/YouCompleteMe' 自动补全，须vim支持python3
 
 
+"markdownpreview
+"vim-table-mode
+"vimwiki
+"https://github.com/theniceboy/.vim
 call plug#end()
 
 
 color snazzy
 let g:SnazzyTransparent = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
