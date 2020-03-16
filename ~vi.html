@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/.vimrc.html</title>
+<meta name="Generator" content="Vim/8.1">
+<meta name="plugin-version" content="vim8.1_v1">
+<meta name="syntax" content="vim">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="snazzy">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 1em; }
+.Number { color: #ffffaf; }
+.Function { color: #5fd7ff; font-weight: bold; }
+.Delimiter { color: #ffffaf; }
+.Comment { color: #5f5f87; }
+.Special { color: #ffffaf; }
+.Identifier { color: #87d7ff; }
+.Statement { color: #ff5faf; font-weight: bold; }
+.PreProc { color: #ff5f5f; }
+.Type { color: #87d7ff; font-weight: bold; }
+.Operator { color: #ff5faf; font-weight: bold; }
+.Normal { color: #ffffff; }
+.String { color: #ffffaf; }
+-->
+</style>
+</head>
+<body>
+<pre id='vimCodeElement'>
+
+<span class="Comment">&quot;     _   _             _  __</span>
+<span class="Comment">&quot;    | | | | ___   ___ | |/ /</span>
+<span class="Comment">&quot;    | |_| |/ _ \ / _ \| ' / </span>
+<span class="Comment">&quot;    |  _  | (_) | (_) | . \ </span>
+<span class="Comment">&quot;    |_| |_|\___/ \___/|_|\_\</span>
+
+
+
+<span class="Statement">set</span> <span class="PreProc">encoding</span>=utf-8
+<span class="Statement">set</span> <span class="PreProc">cursorline</span>
+<span class="Statement">set</span> <span class="PreProc">wrap</span>
+<span class="Statement">set</span> <span class="PreProc">wildmenu</span>
+<span class="Statement">set</span> <span class="PreProc">nocompatible</span>
+<span class="Statement">set</span> <span class="PreProc">showcmd</span>
+<span class="Statement">set</span> <span class="PreProc">hlsearch</span>
+<span class="Statement">exec</span> <span class="String">&quot;noh</span><span class="String">&quot;</span>
+<span class="Statement">set</span> <span class="PreProc">incsearch</span>
+<span class="Statement">set</span> <span class="PreProc">ignorecase</span>
+<span class="Statement">set</span> <span class="PreProc">smartcase</span>
+<span class="Statement">syntax</span> <span class="Type">on</span>
+<span class="Statement">set</span> <span class="PreProc">hlsearch</span>
+<span class="Statement">map</span> R :source $MYVIMRC<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span class="Statement">set</span> <span class="PreProc">tabstop</span>=4
+<span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=4
+<span class="Statement">set</span> <span class="PreProc">softtabstop</span>=4
+<span class="Statement">set</span> <span class="PreProc">showmatch</span>
+<span class="Statement">set</span> <span class="PreProc">scrolloff</span>=5
+<span class="Statement">set</span> <span class="PreProc">foldmethod</span>=indent
+<span class="Statement">set</span> <span class="PreProc">autochdir</span>
+<span class="Statement">au</span> <span class="Type">BufReadPost</span> * <span class="Statement">if</span> <span class="Function">line</span><span class="Delimiter">(</span><span class="String">&quot;'\&quot;</span><span class="String">&quot;</span><span class="Delimiter">)</span><span class="Operator">&gt;</span><span class="Number">1</span> <span class="Operator">&amp;&amp;</span> <span class="Function">line</span><span class="Delimiter">(</span><span class="String">&quot;'\&quot;</span><span class="String">&quot;</span><span class="Delimiter">)</span> <span class="Operator">&lt;=</span> <span class="Function">line</span><span class="Delimiter">(</span><span class="String">&quot;$</span><span class="String">&quot;</span><span class="Delimiter">)</span> | exe <span class="String">&quot;normal !g\&quot;</span><span class="String">&quot;</span> | <span class="Statement">endif</span>
+<span class="Statement">filetype</span> <span class="Type">plugin</span> <span class="Type">on</span>
+<span class="Statement">filetype</span> <span class="Type">on</span>
+<span class="Statement">filetype</span> <span class="Type">indent</span> <span class="Type">on</span>
+<span class="Statement">filetype</span> <span class="Type">plugin</span> <span class="Type">indent</span> <span class="Type">on</span>
+<span class="Statement">map</span> th :-tabnext<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span class="Statement">map</span> tl :+tabnext<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span class="Statement">map</span> tt :tabe<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+
+
+<span class="Statement">call</span> plug#<span class="Normal">begin</span><span class="Delimiter">(</span><span class="String">'~/.vim/plugged'</span><span class="Delimiter">)</span>
+
+Plug <span class="String">'vim-airline/vim-airline'</span>
+Plug <span class="String">'connorholyday/vim-snazzy'</span>
+<span class="Comment">&quot;Plug 'ycm-core/YouCompleteMe' 自动补全，须vim支持python3</span>
+
+
+<span class="Statement">call</span> plug#<span class="Normal">end</span><span class="Delimiter">()</span>
+
+
+<span class="Statement">color</span> snazzy
+<span class="Statement">let</span> <span class="Identifier">g:SnazzyTransparent</span> <span class="Operator">=</span> <span class="Number">1</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
